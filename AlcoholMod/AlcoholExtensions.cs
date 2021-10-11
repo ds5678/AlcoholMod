@@ -1,4 +1,4 @@
-﻿using ModComponentAPI;
+﻿using ModComponent.API;
 
 namespace AlcoholMod
 {
@@ -13,10 +13,10 @@ namespace AlcoholMod
 
 		internal static void UpdateAlcoholValues(FoodItem foodItem)
 		{
-			AlcoholComponent alcoholComponent = ModComponentUtils.ComponentUtils.GetComponent<AlcoholComponent>(foodItem);
+			AlcoholComponent alcoholComponent = ModComponent.Utils.ComponentUtils.GetComponent<AlcoholComponent>(foodItem);
 			if (alcoholComponent != null)
 			{
-				ModComponentUtils.CopyFieldHandler.UpdateFieldValues<AlcoholComponent>(alcoholComponent);
+				ModComponent.Utils.CopyFieldHandler.UpdateFieldValues<AlcoholComponent>(alcoholComponent);
 				alcoholComponent.AmountRemaining = foodItem.m_CaloriesRemaining / foodItem.m_CaloriesTotal * alcoholComponent.AmountTotal;
 			}
 		}

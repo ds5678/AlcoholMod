@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using ModComponentAPI;
+using ModComponent.API;
 using System;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ namespace AlcoholMod
 		{
 			public static void Postfix(GearItem __instance, float normalizedValue)
 			{
-				AlcoholComponent alcoholComponent = ModComponentUtils.ComponentUtils.GetComponent<AlcoholComponent>(__instance);
+				AlcoholComponent alcoholComponent = ModComponent.Utils.ComponentUtils.GetComponent<AlcoholComponent>(__instance);
 				if (alcoholComponent != null)
 				{
 					alcoholComponent.Apply(normalizedValue);
