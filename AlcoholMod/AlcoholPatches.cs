@@ -12,7 +12,7 @@ namespace AlcoholMod
 		{
 			public static void Postfix(GearItem __instance, float normalizedValue)
 			{
-				AlcoholComponent alcoholComponent = ModComponent.Utils.ComponentUtils.GetComponent<AlcoholComponent>(__instance);
+				AlcoholComponent alcoholComponent = ModComponent.Utils.ComponentUtils.GetComponentSafe<AlcoholComponent>(__instance);
 				if (alcoholComponent != null)
 				{
 					alcoholComponent.Apply(normalizedValue);

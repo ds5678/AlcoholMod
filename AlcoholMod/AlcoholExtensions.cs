@@ -13,7 +13,7 @@ namespace AlcoholMod
 
 		internal static void UpdateAlcoholValues(FoodItem foodItem)
 		{
-			AlcoholComponent alcoholComponent = ModComponent.Utils.ComponentUtils.GetComponent<AlcoholComponent>(foodItem);
+			AlcoholComponent alcoholComponent = ModComponent.Utils.ComponentUtils.GetComponentSafe<AlcoholComponent>(foodItem);
 			if (alcoholComponent != null)
 			{
 				ModComponent.Utils.CopyFieldHandler.UpdateFieldValues<AlcoholComponent>(alcoholComponent);
